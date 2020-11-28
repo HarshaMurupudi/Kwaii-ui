@@ -1,7 +1,9 @@
 import React from 'react';
 
+import SmipleyToggle from '../../components/smiley-toggle/smiley-toggle.component';
+
 const smileyPage: React.FC = () => (
-  <div>Smiley is Here</div>
+  <div><SmipleyToggle /></div>
 )
 
 export default smileyPage;
