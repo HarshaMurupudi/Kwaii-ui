@@ -1,0 +1,66 @@
+.center {
+  margin-left: calc(50% - 75px);
+  margin-top: 50px;
+}
+.toggle-container {
+  position: relative;
+  cursor: pointer;
+  margin: 20px 0;
+  outline: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.toggle-gray-bg {
+  background: #d4cfd0;
+  width: 150px;
+  height: 70px;
+  margin-top: -70px;
+  border-radius: 50px;
+  transition: opacity 0.4s;
+}
+.toggle-gray-bg.fade {
+  opacity: 0;
+}
+.toggle-color-bg {
+  background: linear-gradient(to right, #e992ee, #eb92b3);
+  width: 150px;
+  height: 70px;
+  border-radius: 50px;
+}
+.ball-face {
+  position: absolute;
+  overflow: hidden;
+  left: 7px;
+  top: 7px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  transition: left 0.4s ease-in-out;
+  background: linear-gradient(45deg, #c6c6c6 0%, #ffffff 60%);
+  box-shadow: -1px 3px 8px 0px rgba(0, 0, 0, 0.2);
+}
+.ball-face.active {
+  left: 87px;
+}
+.faces-container {
+  position: relative;
+}
+.faces-together {
+  position: absolute;
+  transition: left 0.4s ease-in-out;
+  left: 0;
+}
+.faces-together.active {
+  left: 140px;
+}
+.happy-face {
+  position: absolute;
+  top: 18px;
+  left: -120px;
+  width: 25px;
+}
+.sleepy-face {
+  position: absolute;
+  top: 27px;
+  left: 10px;
+  width: 25px;
+}
