@@ -22,7 +22,11 @@ const white = '#ffffff';
 
 
 const varibles = {
-
+  color: {
+    lightBlue: lightblue,
+    blue: blue,
+    darkBlue: darkblue
+  }
 
 }
 
