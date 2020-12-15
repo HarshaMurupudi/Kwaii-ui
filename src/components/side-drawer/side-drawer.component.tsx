@@ -20,8 +20,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
   },
   appBar: {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: drawerWidth,
+    zIndex: theme.zIndex.drawer + 1,
   },
   drawer: {
     width: drawerWidth,
@@ -29,6 +28,9 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerPaper: {
     width: drawerWidth,
+  },
+  drawerContainer: {
+    overflow: 'auto',
   },
   // necessary for content to be below app bar
   toolbar: theme.mixins.toolbar,
@@ -58,7 +60,7 @@ export default function PermanentDrawerLeft() {
         classes={{
           paper: classes.drawerPaper,
         }}
-        anchor="left"
+      // anchor="left"
       >
         <div className={classes.toolbar} />
         <Divider />
