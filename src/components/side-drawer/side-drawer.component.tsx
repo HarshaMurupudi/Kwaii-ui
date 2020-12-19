@@ -60,14 +60,6 @@ const useStyles = makeStyles((theme) => ({
       width: theme.spacing(9) + 1,
     },
   },
-  // drawerPaper: {
-  //   width: drawerWidth,
-  // },
-  // drawerContainer: {
-  //   overflow: 'auto',
-  // },
-  // necessary for content to be below app bar
-  // toolbar: theme.mixins.toolbar,
   toolbar: {
     display: 'flex',
     alignItems: 'center',
