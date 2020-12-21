@@ -131,10 +131,8 @@ export default function PermanentDrawerLeft() {
         </div>
         {/* <div className={classes.toolbar} /> */}
         <Divider />
-        <p>Components</p>
-
         <List>
-          {['Smiley Toggle'].map((text, index) => (
+          {['Components'].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={text} />
