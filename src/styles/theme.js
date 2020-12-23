@@ -5,10 +5,10 @@ import variables from './variables';
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: variables.color.blue,
+      main: variables.colors.blue,
     },
     secondary: {
-      main: green[500],
+      main: variables.colors.orange,
     },
   },
 });
