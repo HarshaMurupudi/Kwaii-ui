@@ -8,12 +8,14 @@ import {
   AppBar,
   Toolbar,
   List,
+  ListItem,
+  ListItemText,
+  ListItemIcon,
   Typography,
   Divider,
-  ListItem,
   IconButton,
-  ListItemIcon,
-  ListItemText
+  Collapse,
+  Grid
 } from '@material-ui/core';
 
 import MenuIcon from '@material-ui/icons/Menu';
@@ -21,12 +23,17 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import ExpandLess from '@material-ui/icons/ExpandLess'
+import ExpandMore from '@material-ui/icons/ExpandMore'
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+  },
+  nested: {
+    paddingLeft: theme.spacing(4),
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
@@ -92,6 +99,12 @@ export default function PermanentDrawerLeft() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
+  const [sideMenuItemOpen, setSideMenuItemOpen] = React.useState(true);
+
+  const handleClick = () => {
+    setSideMenuItemOpen(!sideMenuItemOpen);
+  };
+
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -145,10 +158,25 @@ export default function PermanentDrawerLeft() {
         <Divider />
         <List>
           {['Components'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
+            <div>
+
+              <ListItem button onClick={handleClick}>
+                <ListItemIcon>
+                  <InboxIcon />
+                </ListItemIcon>
+                <ListItemText primary="Inbox" />
+                {sideMenuItemOpen ? <ExpandLess /> : <ExpandMore />}
+              </ListItem>
+              <Collapse in={sideMenuItemOpen} timeout="auto" unmountOnExit>
+                <List component="div" disablePadding>
+                  <ListItem button className={classes.nested}>
+                    <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                    <ListItemText primary={text} />
+                  </ListItem>
+                </List>
+              </Collapse>
+            </div>
+
           ))}
         </List>
 
