@@ -161,17 +161,17 @@ export default function PermanentDrawerLeft() {
             <div>
 
               <ListItem button onClick={handleClick}>
-                <ListItemIcon>
-                  <InboxIcon />
-                </ListItemIcon>
-                <ListItemText primary="Inbox" />
+                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                <ListItemText primary={text} />
                 {sideMenuItemOpen ? <ExpandLess /> : <ExpandMore />}
               </ListItem>
               <Collapse in={sideMenuItemOpen} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
                   <ListItem button className={classes.nested}>
-                    <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                    <ListItemText primary={text} />
+                    <ListItemIcon>
+                      <InboxIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Inbox" />
                   </ListItem>
                 </List>
               </Collapse>
