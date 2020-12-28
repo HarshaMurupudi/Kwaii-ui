@@ -93,10 +93,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PermanentDrawerLeft() {
+interface AppProps {
+  handleDrawerClick: (clickState: boolean) => void
+}
+
+export default function PermanentDrawerLeft(props: AppProps) {
   const classes = useStyles();
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  // const [open, setOpen] = React.useState(false);
 
   const [sideMenuItemOpen, setSideMenuItemOpen] = React.useState(true);
 
@@ -104,13 +108,13 @@ export default function PermanentDrawerLeft() {
     setSideMenuItemOpen(!sideMenuItemOpen);
   };
 
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
+  // const handleDrawerOpen = () => {
+  //   setOpen(true);
+  // };
 
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
+  // const handleDrawerClose = () => {
+  //   setOpen(false);
+  // };
 
   return (
     <div className={classes.root}>

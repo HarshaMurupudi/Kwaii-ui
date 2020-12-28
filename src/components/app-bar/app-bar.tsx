@@ -82,6 +82,14 @@ export default function NavBar() {
 
   const classes = useStyles();
 
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
+
 
   return (
     <AppBar position="fixed" className={clsx(classes.appBar, {
