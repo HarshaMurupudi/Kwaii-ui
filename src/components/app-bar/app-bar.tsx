@@ -12,6 +12,12 @@ import MenuIcon from '@material-ui/icons/Menu';
 
 const drawerWidth = 240;
 
+interface AppProps {
+  handleDrawerClick: (clickState: boolean) => void,
+  isDrawerOpen: boolean
+}
+
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -78,16 +84,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function NavBar() {
+export default function NavBar({ handleDrawerClick, isDrawerOpen }: AppProps) {
 
   const classes = useStyles();
 
   const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
+    // setOpen(true);
   };
 
 
@@ -99,10 +101,10 @@ export default function NavBar() {
         <IconButton
           color="inherit"
           aria-label="open drawer"
-          // onClick={handleDrawerOpen}
+          onClick={handleDrawerOpen}
           edge="start"
           className={clsx(classes.menuButton, {
-            // [classes.hide]: open,
+            [classes.hide]: isDrawerOpen,
           })}
         >
           <MenuIcon />

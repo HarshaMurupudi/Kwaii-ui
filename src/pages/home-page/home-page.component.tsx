@@ -13,8 +13,8 @@ const HomePage: React.FC = () => {
 
   return (
     <div>
-      <NavBar />
-      <SideDrawer handleDrawerClick={handleDrawerClick} />
+      <NavBar handleDrawerClick={handleDrawerClick} isDrawerOpen={open} />
+      <SideDrawer handleDrawerClick={handleDrawerClick} isDrawerOpen={open} />
 
     </div>
   )

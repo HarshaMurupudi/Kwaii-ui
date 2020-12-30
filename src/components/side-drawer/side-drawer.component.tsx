@@ -27,6 +27,11 @@ import ExpandMore from '@material-ui/icons/ExpandMore'
 
 const drawerWidth = 240;
 
+interface Props {
+  handleDrawerClick: (clickState: boolean) => void,
+  isDrawerOpen: boolean
+}
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -93,11 +98,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-interface AppProps {
-  handleDrawerClick: (clickState: boolean) => void
-}
-
-export default function PermanentDrawerLeft(props: AppProps) {
+export default function PermanentDrawerLeft({ handleDrawerClick, isDrawerOpen }: Props) {
   const classes = useStyles();
   const theme = useTheme();
   // const [open, setOpen] = React.useState(false);
@@ -112,9 +113,9 @@ export default function PermanentDrawerLeft(props: AppProps) {
   //   setOpen(true);
   // };
 
-  // const handleDrawerClose = () => {
-  //   setOpen(false);
-  // };
+  const handleDrawerClose = () => {
+    // setOpen(false);
+  };
 
   return (
     <div className={classes.root}>
@@ -123,13 +124,13 @@ export default function PermanentDrawerLeft(props: AppProps) {
       <Drawer
         variant="permanent"
         className={clsx(classes.drawer, {
-          [classes.drawerOpen]: open,
-          [classes.drawerClose]: !open,
+          [classes.drawerOpen]: isDrawerOpen,
+          [classes.drawerClose]: !isDrawerOpen,
         })}
         classes={{
           paper: clsx({
-            [classes.drawerOpen]: open,
-            [classes.drawerClose]: !open,
+            [classes.drawerOpen]: isDrawerOpen,
+            [classes.drawerClose]: !isDrawerOpen,
           }),
         }}
       >
