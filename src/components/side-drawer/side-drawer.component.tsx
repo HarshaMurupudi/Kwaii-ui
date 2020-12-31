@@ -143,7 +143,7 @@ export default function PermanentDrawerLeft({ handleDrawerClick, isDrawerOpen }:
         <Divider />
         <List>
           {['Components'].map((text, index) => (
-            <div>
+            <div key={index}>
 
               <ListItem button onClick={handleClick}>
                 <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
