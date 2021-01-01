@@ -107,7 +107,6 @@ export default function PermanentDrawerLeft({ handleDrawerClick, isDrawerOpen }:
   // };
 
   const handleDrawerClose = () => {
-    // setOpen(false);
     handleDrawerClick(false);
   };
 
