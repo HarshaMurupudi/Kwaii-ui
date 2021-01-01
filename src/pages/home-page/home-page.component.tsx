@@ -6,9 +6,8 @@ import SideDrawer from '../../components/side-drawer/side-drawer.component';
 const HomePage: React.FC = () => {
   const [open, setOpen] = React.useState(false);
 
-  const handleDrawerClick = () => {
-    // setOpen(true);
-    console.log("hit");
+  const handleDrawerClick = (drawerStatus: boolean) => {
+    setOpen(drawerStatus);
   };
 
   return (
