@@ -110,11 +110,13 @@ export default function PermanentDrawerLeft({ handleDrawerClick, isDrawerOpen }:
   };
 
   // const handleDrawerOpen = () => {
-  //   setOpen(true);
+  //   // setOpen(true);
+  //   handleDrawerClick(true);
   // };
 
   const handleDrawerClose = () => {
     // setOpen(false);
+    handleDrawerClick(false);
   };
 
   return (

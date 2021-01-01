@@ -89,13 +89,13 @@ export default function NavBar({ handleDrawerClick, isDrawerOpen }: AppProps) {
   const classes = useStyles();
 
   const handleDrawerOpen = () => {
-    // setOpen(true);
+    handleDrawerClick(true)
   };
 
 
   return (
     <AppBar position="fixed" className={clsx(classes.appBar, {
-      // [classes.appBarShift]: open,
+      [classes.appBarShift]: isDrawerOpen,
     })}>
       <Toolbar>
         <IconButton
