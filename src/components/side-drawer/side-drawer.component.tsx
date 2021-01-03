@@ -1,12 +1,9 @@
 import React from 'react';
-
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import {
   Drawer,
   CssBaseline,
-  AppBar,
-  Toolbar,
   List,
   ListItem,
   ListItemText,
@@ -15,7 +12,6 @@ import {
   Divider,
   IconButton,
   Collapse,
-  Grid
 } from '@material-ui/core';
 
 import InboxIcon from '@material-ui/icons/MoveToInbox';
@@ -38,16 +34,6 @@ const useStyles = makeStyles((theme) => ({
   },
   nested: {
     paddingLeft: theme.spacing(4),
-  },
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1,
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-  },
-  menuButton: {
-    marginRight: 36,
   },
   hide: {
     display: 'none',
@@ -101,11 +87,6 @@ export default function PermanentDrawerLeft({ handleDrawerClick, isDrawerOpen }:
     setSideMenuItemOpen(!sideMenuItemOpen);
   };
 
-  // const handleDrawerOpen = () => {
-  //   // setOpen(true);
-  //   handleDrawerClick(true);
-  // };
-
   const handleDrawerClose = () => {
     handleDrawerClick(false);
   };
@@ -132,7 +113,6 @@ export default function PermanentDrawerLeft({ handleDrawerClick, isDrawerOpen }:
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </div>
-        {/* <div className={classes.toolbar} /> */}
         <Divider />
         <List>
           {['Components'].map((text, index) => (
