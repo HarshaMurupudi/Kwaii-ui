@@ -1,8 +1,9 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import {
-  Drawer,
+  Drawer as MUIDrawer,
   CssBaseline,
   List,
   ListItem,
@@ -76,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PermanentDrawerLeft({ handleDrawerClick, isDrawerOpen }: Props) {
+function Drawer({ handleDrawerClick, isDrawerOpen }: Props) {
   const classes = useStyles();
   const theme = useTheme();
   // const [open, setOpen] = React.useState(false);
@@ -95,7 +96,7 @@ export default function PermanentDrawerLeft({ handleDrawerClick, isDrawerOpen }:
     <div className={classes.root}>
       <CssBaseline />
 
-      <Drawer
+      <MUIDrawer
         variant="permanent"
         className={clsx(classes.drawer, {
           [classes.drawerOpen]: isDrawerOpen,
@@ -138,7 +139,7 @@ export default function PermanentDrawerLeft({ handleDrawerClick, isDrawerOpen }:
           ))}
         </List>
 
-      </Drawer>
+      </MUIDrawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
         <Typography paragraph>
@@ -168,3 +169,5 @@ export default function PermanentDrawerLeft({ handleDrawerClick, isDrawerOpen }:
     </div>
   );
 }
+
+export default Drawer;
