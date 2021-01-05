@@ -1,5 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { RouteComponentProps } from "react-router";
+
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import {
@@ -24,7 +26,18 @@ import ExpandMore from '@material-ui/icons/ExpandMore'
 
 const drawerWidth = 240;
 
-interface Props {
+// interface Props {
+//   handleDrawerClick: (clickState: boolean) => void,
+//   isDrawerOpen: boolean
+// }
+
+// Type whatever you expect in 'this.props.match.params.*'
+type PathParamsType = {
+  param1: string,
+}
+
+// Your component own properties
+type PropsType = RouteComponentProps<PathParamsType> & {
   handleDrawerClick: (clickState: boolean) => void,
   isDrawerOpen: boolean
 }
@@ -77,7 +90,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Drawer({ handleDrawerClick, isDrawerOpen }: Props) {
+function Drawer({ handleDrawerClick, isDrawerOpen }: PropsType) {
   const classes = useStyles();
   const theme = useTheme();
   // const [open, setOpen] = React.useState(false);
@@ -170,4 +183,4 @@ function Drawer({ handleDrawerClick, isDrawerOpen }: Props) {
   );
 }
 
-export default Drawer;
+export default withRouter(Drawer);
