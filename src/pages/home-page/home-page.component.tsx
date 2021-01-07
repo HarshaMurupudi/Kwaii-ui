@@ -3,7 +3,7 @@ import React from 'react'
 import NavBar from '../../components/app-bar/app-bar'
 import SideDrawer from '../../components/side-drawer/side-drawer.component';
 
-const HomePage: React.FC = () => {
+const HomePage: React.FC = (props) => {
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerClick = (drawerStatus: boolean) => {
