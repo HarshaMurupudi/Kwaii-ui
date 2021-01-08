@@ -12,6 +12,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" render={props => <HomePage />} />
+          <Route exact path="/smiley-toggle" render={props => <SmileyPage />} />
         </Switch>
       </Router>
       {/* Footer */}
