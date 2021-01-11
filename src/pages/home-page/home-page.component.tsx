@@ -1,19 +1,11 @@
 import React from 'react'
 
-import NavBar from '../../components/app-bar/app-bar'
-import SideDrawer from '../../components/side-drawer/side-drawer.component';
 
 const HomePage: React.FC = (props) => {
-  const [open, setOpen] = React.useState(false);
-
-  const handleDrawerClick = (drawerStatus: boolean) => {
-    setOpen(drawerStatus);
-  };
 
   return (
     <div>
-      <NavBar handleDrawerClick={handleDrawerClick} isDrawerOpen={open} />
-      <SideDrawer handleDrawerClick={handleDrawerClick} isDrawerOpen={open} />
+
 
     </div>
   )

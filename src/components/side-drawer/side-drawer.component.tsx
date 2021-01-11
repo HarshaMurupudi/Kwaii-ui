@@ -93,6 +93,13 @@ function Drawer({ handleDrawerClick, isDrawerOpen, history }: PropsType) {
 
   console.log(history);
 
+  // const menuItems = [
+  //   {
+  //     text: "Components",
+  //     icon: 
+  //   }
+  // ];
+
   const classes = useStyles();
   const theme = useTheme();
   // const [open, setOpen] = React.useState(false);
@@ -141,11 +148,11 @@ function Drawer({ handleDrawerClick, isDrawerOpen, history }: PropsType) {
               </ListItem>
               <Collapse in={sideMenuItemOpen} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
-                  <ListItem button className={classes.nested}>
+                  <ListItem button className={classes.nested} onClick={() => history.push('/toggle')} >
                     <ListItemIcon>
                       <InboxIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Inbox" />
+                    <ListItemText primary="Toggle" />
                   </ListItem>
                 </List>
               </Collapse>
