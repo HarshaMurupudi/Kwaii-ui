@@ -1,4 +1,6 @@
 import React from 'react';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
+
 import {
   AppBar,
   Toolbar,
@@ -12,7 +14,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 
 const drawerWidth = 240;
 
-interface Props {
+interface PropsType extends RouteComponentProps<any> {
   handleDrawerClick: (clickState: boolean) => void,
   isDrawerOpen: boolean
 }
@@ -46,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function NavBar({ handleDrawerClick, isDrawerOpen }: Props) {
+function NavBar({ handleDrawerClick, isDrawerOpen }: PropsType) {
 
   const classes = useStyles();
 
@@ -78,3 +80,5 @@ export default function NavBar({ handleDrawerClick, isDrawerOpen }: Props) {
     </AppBar>
   )
 }
+
+export default withRouter(NavBar);
