@@ -4,8 +4,8 @@ import { withRouter, RouteComponentProps } from 'react-router-dom';
 import {
   AppBar,
   Toolbar,
-  Typography,
   IconButton,
+  Button
 } from '@material-ui/core';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
@@ -46,16 +46,22 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.default,
     padding: theme.spacing(3),
   },
+  margin: {
+    margin: theme.spacing(1),
+  },
+
+  root: {
+    color: 'white',
+
+  },
+
 }));
 
-function NavBar({ handleDrawerClick, isDrawerOpen }: PropsType) {
-
+function NavBar({ handleDrawerClick, isDrawerOpen, history }: PropsType) {
   const classes = useStyles();
-
-  const handleDrawerOpen = () => {
+  const handleDrawerOpen = (): void => {
     handleDrawerClick(true)
   };
-
 
   return (
     <AppBar position="fixed" className={clsx(classes.appBar, {
@@ -73,9 +79,9 @@ function NavBar({ handleDrawerClick, isDrawerOpen }: PropsType) {
         >
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" noWrap>
+        <Button size="large" className={classes.root} onClick={() => history.push('/')}>
           Kawaii UI
-          </Typography>
+        </Button>
       </Toolbar>
     </AppBar>
   )
