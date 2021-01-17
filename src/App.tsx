@@ -24,7 +24,7 @@ function App() {
         <NavBar handleDrawerClick={handleDrawerClick} isDrawerOpen={open} />
 
         <Switch>
-          <Route exact path="/" render={props => <HomePage />} />
+          <Route exact path="/" render={props => <HomePage isDrawerOpen={open} />} />
           <Route exact path="/toggle" render={props => <SmileyPage />} />
         </Switch>
       </Router>

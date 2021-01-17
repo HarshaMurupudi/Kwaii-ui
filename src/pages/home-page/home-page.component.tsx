@@ -4,7 +4,12 @@ import {
   Typography
 } from '@material-ui/core';
 import { makeStyles, useTheme, Theme, createStyles } from '@material-ui/core/styles';
-const HomePage: React.FC = (props) => {
+
+interface PropsType {
+  isDrawerOpen: boolean
+}
+
+const HomePage = ({ isDrawerOpen }: PropsType) => {
 
   const drawerWidth = 240;
 
@@ -72,7 +77,7 @@ const HomePage: React.FC = (props) => {
   return (
     <main
       className={clsx(classes.content, {
-        [classes.contentShift]: open,
+        [classes.contentShift]: isDrawerOpen,
       })}
     >
       <div className={classes.drawerHeader} />
