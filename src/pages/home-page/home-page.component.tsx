@@ -69,6 +69,12 @@ const HomePage = ({ isDrawerOpen }: PropsType) => {
         }),
         marginLeft: 0,
       },
+      shiftTextLeft: {
+        marginLeft: '0px'
+      },
+      shiftTextRight: {
+        marginLeft: drawerWidth,
+      }
     }),
   );
 
