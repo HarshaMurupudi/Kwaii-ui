@@ -86,9 +86,7 @@ const HomePage = ({ isDrawerOpen }: PropsType) => {
         [classes.contentShift]: isDrawerOpen,
       })}
     >
-      <div className={clsx(classes.appBar, {
-        [classes.appBarShift]: isDrawerOpen,
-      })}>
+      <div className={isDrawerOpen ? classes.appBarShift : classes.shiftTextLeft} >
 
         <div className={classes.drawerHeader} />
         <Typography paragraph>
