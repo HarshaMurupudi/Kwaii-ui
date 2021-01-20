@@ -70,6 +70,7 @@ const HomePage = ({ isDrawerOpen }: PropsType) => {
         marginLeft: 0,
       },
       shiftTextLeft: {
+        // understand close width
         marginLeft: '0px'
       },
       shiftTextRight: {
