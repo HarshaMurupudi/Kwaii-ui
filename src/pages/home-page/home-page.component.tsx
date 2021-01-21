@@ -71,11 +71,8 @@ const HomePage = ({ isDrawerOpen }: PropsType) => {
       },
       shiftTextLeft: {
         // understand close width
-        marginLeft: '0px'
+        marginLeft: drawerWidth
       },
-      shiftTextRight: {
-        marginLeft: drawerWidth,
-      }
     }),
   );
 
@@ -87,7 +84,7 @@ const HomePage = ({ isDrawerOpen }: PropsType) => {
         [classes.contentShift]: isDrawerOpen,
       })}
     >
-      <div className={isDrawerOpen ? classes.appBarShift : classes.shiftTextLeft} >
+      <div className={isDrawerOpen ? classes.shiftTextLeft : classes.shiftTextLeft} >
 
         <div className={classes.drawerHeader} />
         <Typography paragraph>
