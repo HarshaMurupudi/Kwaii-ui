@@ -73,6 +73,10 @@ const HomePage = ({ isDrawerOpen }: PropsType) => {
         // understand close width
         marginLeft: drawerWidth
       },
+      shiftTextLeftMini: {
+        // open width + mini width
+        marginLeft: 240 + 73
+      },
     }),
   );
 
@@ -84,7 +88,7 @@ const HomePage = ({ isDrawerOpen }: PropsType) => {
         [classes.contentShift]: isDrawerOpen,
       })}
     >
-      <div className={isDrawerOpen ? classes.shiftTextLeft : classes.shiftTextLeft} >
+      <div className={isDrawerOpen ? classes.shiftTextLeft : classes.shiftTextLeftMini} >
 
         <div className={classes.drawerHeader} />
         <Typography paragraph>
