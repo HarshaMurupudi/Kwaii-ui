@@ -2,7 +2,11 @@ import React from 'react';
 
 import SmipleyToggle from '../../components/smiley-toggle/smiley-toggle.component';
 
-const smileyPage: React.FC = () => (
+interface PropsType {
+  isDrawerOpen: boolean
+}
+
+const smileyPage = ({ isDrawerOpen }: PropsType) => (
   <div><SmipleyToggle /></div>
 )
 

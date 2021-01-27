@@ -24,7 +24,6 @@ const HomePage = ({ isDrawerOpen }: PropsType) => {
       })}
     >
       <div className={isDrawerOpen ? classes.shiftTextLeft : classes.shiftTextLeftMini} >
-
         <div className={classes.drawerHeader} />
         <Container maxWidth="sm">
           <h1> Kawaii UI</h1>

@@ -25,7 +25,7 @@ function App() {
 
         <Switch>
           <Route exact path="/" render={props => <HomePage isDrawerOpen={open} />} />
-          <Route exact path="/toggle" render={props => <SmileyPage />} />
+          <Route exact path="/toggle" render={props => <SmileyPage isDrawerOpen={open} />} />
         </Switch>
       </Router>
       {/* Footer */}
