@@ -24,8 +24,9 @@ function App() {
         <NavBar handleDrawerClick={handleDrawerClick} isDrawerOpen={open} />
 
         <Switch>
+          {/* main layout */}
           <Route exact path="/" render={props => <HomePage isDrawerOpen={open} />} />
-          <Route exact path="/toggle" render={props => <SmileyPage isDrawerOpen={open} />} />
+          <Route exact path="/toggle" render={props => <SmileyPage />} />
         </Switch>
       </Router>
       {/* Footer */}
