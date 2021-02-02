@@ -6,6 +6,7 @@ import HomePage from './pages/home-page/home-page.component';
 import SideDrawer from './components/side-drawer/side-drawer.component';
 import NavBar from './components/app-bar/app-bar'
 
+import Layout from './components/layouts/layout.component';
 
 
 function App() {
@@ -23,11 +24,13 @@ function App() {
         <SideDrawer handleDrawerClick={handleDrawerClick} isDrawerOpen={open} />
         <NavBar handleDrawerClick={handleDrawerClick} isDrawerOpen={open} />
 
-        <Switch>
-          {/* main layout */}
-          <Route exact path="/" render={props => <HomePage isDrawerOpen={open} />} />
-          <Route exact path="/toggle" render={props => <SmileyPage />} />
-        </Switch>
+        <Layout>
+          <Switch>
+            {/* main layout */}
+            <Route exact path="/" render={props => <HomePage isDrawerOpen={open} />} />
+            <Route exact path="/toggle" render={props => <SmileyPage />} />
+          </Switch>
+        </Layout>
       </Router>
       {/* Footer */}
     </div>
