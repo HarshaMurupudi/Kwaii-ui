@@ -24,10 +24,10 @@ function App() {
         <SideDrawer handleDrawerClick={handleDrawerClick} isDrawerOpen={open} />
         <NavBar handleDrawerClick={handleDrawerClick} isDrawerOpen={open} />
 
-        <Layout>
+        <Layout isDrawerOpen={open}>
           <Switch>
             {/* main layout */}
-            <Route exact path="/" render={props => <HomePage isDrawerOpen={open} />} />
+            <Route exact path="/" render={props => <HomePage />} />
             <Route exact path="/toggle" render={props => <SmileyPage />} />
           </Switch>
         </Layout>
