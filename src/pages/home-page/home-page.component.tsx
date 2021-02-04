@@ -18,7 +18,7 @@ const HomePage = ({ isDrawerOpen }: PropsType) => {
   const classes = useStyles();
 
   return (
-    <main
+    <div
       className={clsx(classes.content, {
         [classes.contentShift]: isDrawerOpen,
       })}
@@ -38,7 +38,7 @@ const HomePage = ({ isDrawerOpen }: PropsType) => {
           </div>
         </Container>
       </div>
-    </main>
+    </div>
   )
 }
 

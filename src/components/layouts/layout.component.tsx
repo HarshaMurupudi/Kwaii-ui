@@ -1,5 +1,6 @@
 import React from 'react';
 
+import clsx from 'clsx';
 import { makeStyles, useTheme, Theme, createStyles } from '@material-ui/core/styles';
 
 interface PropsType {
@@ -15,9 +16,13 @@ const Layout = ({ children, isDrawerOpen }: PropsType) => {
   const classes = useStyles();
 
   return (
-    <>
-      <main>{children}</main>
-    </>
+    <div
+      className={clsx(classes.content, {
+        [classes.contentShift]: isDrawerOpen,
+      })}
+    >
+      <main className={isDrawerOpen ? classes.shiftTextLeft : classes.shiftTextLeftMini} >{children}</main>
+    </div>
   );
 }
 
