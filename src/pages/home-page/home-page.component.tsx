@@ -7,38 +7,31 @@ import {
 } from '@material-ui/core';
 import { makeStyles, useTheme, Theme, createStyles } from '@material-ui/core/styles';
 
-interface PropsType {
-  isDrawerOpen: boolean
-}
+
 
 const drawerWidth = 240;
 
-const HomePage = ({ isDrawerOpen }: PropsType) => {
+const HomePage = () => {
 
   const classes = useStyles();
 
   return (
-    <div
-      className={clsx(classes.content, {
-        [classes.contentShift]: isDrawerOpen,
-      })}
-    >
-      <div className={isDrawerOpen ? classes.shiftTextLeft : classes.shiftTextLeftMini} >
-        <div className={classes.drawerHeader} />
-        <Container maxWidth="sm">
-          <h1> Kawaii UI</h1>
-          <p>Simple and Cute UI components for the web</p>
-          <div>
-            <Button variant="outlined" color="primary">
-              Get Started
+    <>
+      <div className={classes.drawerHeader} />
+      <Container maxWidth="sm">
+        <h1> Kawaii UI</h1>
+        <p>Simple and Cute UI components for the web</p>
+        <div>
+          <Button variant="outlined" color="primary">
+            Get Started
           </Button>
-            <Button variant="outlined" color="primary">
-              Latest
+          <Button variant="outlined" color="primary">
+            Latest
           </Button>
-          </div>
-        </Container>
-      </div>
-    </div>
+        </div>
+      </Container>
+    </>
+
   )
 }
 
