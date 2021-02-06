@@ -22,20 +22,10 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ExpandLess from '@material-ui/icons/ExpandLess'
 import ExpandMore from '@material-ui/icons/ExpandMore'
+import ToggleOnIcon from '@material-ui/icons/ToggleOn';
 
 const drawerWidth = 240;
 
-// interface Props {
-//   handleDrawerClick: (clickState: boolean) => void,
-//   isDrawerOpen: boolean
-// }
-
-// Type whatever you expect in 'this.props.match.params.*'
-// type PathParamsType = {
-//   param1: string,
-// }
-
-// Your component own properties
 interface PropsType extends RouteComponentProps<any> {
   handleDrawerClick: (clickState: boolean) => void,
   isDrawerOpen: boolean
@@ -90,20 +80,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Drawer({ handleDrawerClick, isDrawerOpen, history }: PropsType) {
-
-  console.log(history);
-
-  // const menuItems = [
-  //   {
-  //     text: "Components",
-  //     icon: 
-  //   }
-  // ];
-
   const classes = useStyles();
   const theme = useTheme();
-  // const [open, setOpen] = React.useState(false);
-
   const [sideMenuItemOpen, setSideMenuItemOpen] = React.useState(true);
 
   const handleClick = () => {
@@ -150,7 +128,7 @@ function Drawer({ handleDrawerClick, isDrawerOpen, history }: PropsType) {
                 <List component="div" disablePadding>
                   <ListItem button className={classes.nested} onClick={() => history.push('/toggle')} >
                     <ListItemIcon>
-                      <InboxIcon />
+                      <ToggleOnIcon />
                     </ListItemIcon>
                     <ListItemText primary="Toggle" />
                   </ListItem>
