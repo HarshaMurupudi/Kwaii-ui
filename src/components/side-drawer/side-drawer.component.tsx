@@ -23,6 +23,7 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ExpandLess from '@material-ui/icons/ExpandLess'
 import ExpandMore from '@material-ui/icons/ExpandMore'
 import ToggleOnIcon from '@material-ui/icons/ToggleOn';
+import BrandingWatermarkIcon from '@material-ui/icons/BrandingWatermark';
 
 const drawerWidth = 240;
 
@@ -120,7 +121,7 @@ function Drawer({ handleDrawerClick, isDrawerOpen, history }: PropsType) {
             <div key={index}>
 
               <ListItem button onClick={handleClick}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                <ListItemIcon>{index % 2 === 0 ? <BrandingWatermarkIcon /> : <BrandingWatermarkIcon />}</ListItemIcon>
                 <ListItemText primary={text} />
                 {sideMenuItemOpen ? <ExpandLess /> : <ExpandMore />}
               </ListItem>
