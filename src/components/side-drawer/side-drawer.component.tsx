@@ -10,14 +10,11 @@ import {
   ListItem,
   ListItemText,
   ListItemIcon,
-  Typography,
   Divider,
   IconButton,
   Collapse,
 } from '@material-ui/core';
 
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ExpandLess from '@material-ui/icons/ExpandLess'
@@ -81,6 +78,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Drawer({ handleDrawerClick, isDrawerOpen, history }: PropsType) {
+  const menuList = [];
+
   const classes = useStyles();
   const theme = useTheme();
   const [sideMenuItemOpen, setSideMenuItemOpen] = React.useState(true);
@@ -88,7 +87,6 @@ function Drawer({ handleDrawerClick, isDrawerOpen, history }: PropsType) {
   const handleClick = () => {
     setSideMenuItemOpen(!sideMenuItemOpen);
   };
-
   const handleDrawerClose = () => {
     handleDrawerClick(false);
   };
