@@ -78,7 +78,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Drawer({ handleDrawerClick, isDrawerOpen, history }: PropsType) {
-  const menuList = [];
+  const menuList = [
+    {
+      name: "Components",
+      subMenu: [
+        { name: "Toggle" }
+      ]
+    }
+  ];
 
   const classes = useStyles();
   const theme = useTheme();
