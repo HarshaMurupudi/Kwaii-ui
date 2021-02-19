@@ -7,6 +7,7 @@ const SimpleBtn: React.FC = () => {
 
       </i>
       <span className="btn__label">Change Language</span>
+      <div className="ripple__inner"></div>
     </button>
   </div>)
 }
