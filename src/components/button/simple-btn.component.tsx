@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './simple-btn.styles.scss'
+
 const SimpleBtn: React.FC = () => {
   return (<div>
     <button type="button" className="btn">

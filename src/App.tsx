@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import SmileyPage from './pages/toggle/smiley-page.component';
-import HomePage from './pages/home-page/home-page.component';
+import SmileyPage from './pages/toggle/toggle-page.component';
+import HomePage from './pages/home/home-page.component';
 import SideDrawer from './components/side-drawer/side-drawer.component';
 import NavBar from './components/app-bar/app-bar'
 

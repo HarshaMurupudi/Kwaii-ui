@@ -21,6 +21,7 @@ import ExpandLess from '@material-ui/icons/ExpandLess'
 import ExpandMore from '@material-ui/icons/ExpandMore'
 import ToggleOnIcon from '@material-ui/icons/ToggleOn';
 import BrandingWatermarkIcon from '@material-ui/icons/BrandingWatermark';
+import CallToActionIcon from '@material-ui/icons/CallToAction';
 
 const drawerWidth = 240;
 
@@ -82,7 +83,8 @@ function Drawer({ handleDrawerClick, isDrawerOpen, history }: PropsType) {
     {
       name: "Components",
       subMenu: [
-        { name: "Toggle" }
+        { name: "Toggle", path: '/toggle', Icon: ToggleOnIcon },
+        { name: "Button", path: '/button', Icon: CallToActionIcon },
       ]
     }
   ];
