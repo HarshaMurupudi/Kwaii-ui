@@ -79,15 +79,15 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Drawer({ handleDrawerClick, isDrawerOpen, history }: PropsType) {
-  const menuList = [
-    {
+  const menuList = {
+    components: {
       name: "Components",
       subMenu: [
         { name: "Toggle", path: '/toggle', Icon: ToggleOnIcon },
         { name: "Button", path: '/button', Icon: CallToActionIcon },
       ]
     }
-  ];
+  };
 
   const classes = useStyles();
   const theme = useTheme();
@@ -126,7 +126,6 @@ function Drawer({ handleDrawerClick, isDrawerOpen, history }: PropsType) {
         <List>
           {['Components'].map((text, index) => (
             <div key={index}>
-
               <ListItem button onClick={handleClick}>
                 <ListItemIcon>{index % 2 === 0 ? <BrandingWatermarkIcon /> : <BrandingWatermarkIcon />}</ListItemIcon>
                 <ListItemText primary={text} />
@@ -134,12 +133,7 @@ function Drawer({ handleDrawerClick, isDrawerOpen, history }: PropsType) {
               </ListItem>
               <Collapse in={sideMenuItemOpen} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
-                  <ListItem button className={classes.nested} onClick={() => history.push('/toggle')} >
-                    <ListItemIcon>
-                      <ToggleOnIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Toggle" />
-                  </ListItem>
+                  {/* {menuList.map((menuItem))} */}
                 </List>
               </Collapse>
             </div>
