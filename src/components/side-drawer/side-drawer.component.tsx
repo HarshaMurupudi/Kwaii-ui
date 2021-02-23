@@ -133,7 +133,14 @@ function Drawer({ handleDrawerClick, isDrawerOpen, history }: PropsType) {
               </ListItem>
               <Collapse in={sideMenuItemOpen} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
-                  {/* {menuList.map((menuItem))} */}
+                  {menuList.components.subMenu.map((subMenuItem, index) => (
+                    <ListItem button className={classes.nested} onClick={() => history.push(`${subMenuItem.path}`)} >
+                      <ListItemIcon>
+                        <subMenuItem.Icon />
+                      </ListItemIcon>
+                      <ListItemText primary={`${subMenuItem.name}`} />
+                    </ListItem>
+                  ))}
                 </List>
               </Collapse>
             </div>
