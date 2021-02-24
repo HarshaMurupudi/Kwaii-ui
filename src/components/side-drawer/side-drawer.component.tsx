@@ -82,6 +82,15 @@ function Drawer({ handleDrawerClick, isDrawerOpen, history }: PropsType) {
   const menuList = {
     components: {
       name: "Components",
+      Icon: "",
+      subMenu: [
+        { name: "Toggle", path: '/toggle', Icon: ToggleOnIcon },
+        { name: "Button", path: '/button', Icon: CallToActionIcon },
+      ]
+    },
+    effects: {
+      name: "Effects",
+      Icon: "",
       subMenu: [
         { name: "Toggle", path: '/toggle', Icon: ToggleOnIcon },
         { name: "Button", path: '/button', Icon: CallToActionIcon },
@@ -124,7 +133,7 @@ function Drawer({ handleDrawerClick, isDrawerOpen, history }: PropsType) {
         </div>
         <Divider />
         <List>
-          {['Components'].map((text, index) => (
+          {Object.keys(menuList).map((text, index) => (
             <div key={index}>
               <ListItem button onClick={handleClick}>
                 <ListItemIcon>{index % 2 === 0 ? <BrandingWatermarkIcon /> : <BrandingWatermarkIcon />}</ListItemIcon>
