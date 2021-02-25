@@ -15,6 +15,7 @@ import {
   Collapse,
 } from '@material-ui/core';
 
+import WbIridescentIcon from '@material-ui/icons/WbIridescent';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ExpandLess from '@material-ui/icons/ExpandLess'
@@ -82,7 +83,7 @@ function Drawer({ handleDrawerClick, isDrawerOpen, history }: PropsType) {
   const menuList = {
     components: {
       name: "Components",
-      Icon: "",
+      Icon: BrandingWatermarkIcon,
       subMenu: [
         { name: "Toggle", path: '/toggle', Icon: ToggleOnIcon },
         { name: "Button", path: '/button', Icon: CallToActionIcon },
@@ -90,7 +91,7 @@ function Drawer({ handleDrawerClick, isDrawerOpen, history }: PropsType) {
     },
     effects: {
       name: "Effects",
-      Icon: "",
+      Icon: WbIridescentIcon,
       subMenu: [
         { name: "Toggle", path: '/toggle', Icon: ToggleOnIcon },
         { name: "Button", path: '/button', Icon: CallToActionIcon },
@@ -133,11 +134,11 @@ function Drawer({ handleDrawerClick, isDrawerOpen, history }: PropsType) {
         </div>
         <Divider />
         <List>
-          {Object.keys(menuList).map((text, index) => (
+          {Object.values(menuList).map((menu, index) => (
             <div key={index}>
               <ListItem button onClick={handleClick}>
-                <ListItemIcon>{index % 2 === 0 ? <BrandingWatermarkIcon /> : <BrandingWatermarkIcon />}</ListItemIcon>
-                <ListItemText primary={text} />
+                <ListItemIcon><menu.Icon /></ListItemIcon>
+                <ListItemText primary={menu.name} />
                 {sideMenuItemOpen ? <ExpandLess /> : <ExpandMore />}
               </ListItem>
               <Collapse in={sideMenuItemOpen} timeout="auto" unmountOnExit>
