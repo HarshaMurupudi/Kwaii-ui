@@ -93,8 +93,8 @@ function Drawer({ handleDrawerClick, isDrawerOpen, history }: PropsType) {
       name: "Effects",
       Icon: WbIridescentIcon,
       subMenu: [
-        { name: "Toggle", path: '/toggle', Icon: ToggleOnIcon },
-        { name: "Button", path: '/button', Icon: CallToActionIcon },
+        { name: "Shadow", path: '/shadow', Icon: ToggleOnIcon },
+        { name: "Ripple", path: '/ripple', Icon: CallToActionIcon },
       ]
     }
   };
@@ -143,7 +143,7 @@ function Drawer({ handleDrawerClick, isDrawerOpen, history }: PropsType) {
               </ListItem>
               <Collapse in={sideMenuItemOpen} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
-                  {menuList.components.subMenu.map((subMenuItem, index) => (
+                  {menu.subMenu.map((subMenuItem, index) => (
                     <ListItem button className={classes.nested} onClick={() => history.push(`${subMenuItem.path}`)} >
                       <ListItemIcon>
                         <subMenuItem.Icon />
