@@ -23,6 +23,8 @@ import ExpandMore from '@material-ui/icons/ExpandMore'
 import ToggleOnIcon from '@material-ui/icons/ToggleOn';
 import BrandingWatermarkIcon from '@material-ui/icons/BrandingWatermark';
 import CallToActionIcon from '@material-ui/icons/CallToAction';
+import TouchAppIcon from '@material-ui/icons/TouchApp';
+import WavesIcon from '@material-ui/icons/Waves';
 
 const drawerWidth = 240;
 
@@ -93,8 +95,8 @@ function Drawer({ handleDrawerClick, isDrawerOpen, history }: PropsType) {
       name: "Effects",
       Icon: WbIridescentIcon,
       subMenu: [
-        { name: "Shadow", path: '/shadow', Icon: ToggleOnIcon },
-        { name: "Ripple", path: '/ripple', Icon: CallToActionIcon },
+        { name: "Shadow", path: '/shadow', Icon: TouchAppIcon },
+        { name: "Ripple", path: '/ripple', Icon: WavesIcon },
       ]
     }
   };
