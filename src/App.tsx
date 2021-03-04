@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
+import NavBar from './components/app-bar/app-bar'
+import Layout from './components/layouts/layout.component';
+import SideDrawer from './components/side-drawer/side-drawer.component';
+
 import SmileyPage from './pages/toggle/toggle-page.component';
 import HomePage from './pages/home/home-page.component';
-import SideDrawer from './components/side-drawer/side-drawer.component';
-import NavBar from './components/app-bar/app-bar'
-
-import Layout from './components/layouts/layout.component';
-
+import ButtonPage from './pages/button/button-page.component';
 
 function App() {
   const [open, setOpen] = React.useState(false);
@@ -29,6 +29,7 @@ function App() {
             {/* main layout */}
             <Route exact path="/" render={props => <HomePage />} />
             <Route exact path="/toggle" render={props => <SmileyPage />} />
+            <Route exact path="/button" render={props => <ButtonPage />} />
           </Switch>
         </Layout>
       </Router>
