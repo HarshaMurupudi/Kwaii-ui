@@ -97,7 +97,7 @@ function Drawer({ handleDrawerClick, isDrawerOpen, history }: PropsType) {
       subMenu: [
         { name: "Shadow", path: '/shadow', Icon: TouchAppIcon },
         { name: "Ripple", path: '/ripple', Icon: WavesIcon },
-        { name: "Defer", path: '/ripple', Icon: WavesIcon },
+        { name: "Defer Loading", path: '/ripple', Icon: WavesIcon },
         { name: "Lazy Loading", path: '/ripple', Icon: WavesIcon },
       ]
     }
