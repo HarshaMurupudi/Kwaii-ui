@@ -3,15 +3,11 @@ import React from 'react'
 import './simple-btn.styles.scss'
 
 const SimpleBtn: React.FC = () => {
-  return (<div>
-    <button type="button" className="btn">
-      <i className="btn__icon">
-
-      </i>
-      <span className="btn__label">Change Language</span>
-      <div className="ripple__inner"></div>
+  return (
+    <button className="btn">
+      Enter
     </button>
-  </div>)
+  )
 }
 
 export default SimpleBtn;
