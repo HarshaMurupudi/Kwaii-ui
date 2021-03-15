@@ -19,8 +19,10 @@ class SimpleBtn extends React.Component<PropType> {
   render() {
     const { children = null, classes = "", onClickHandler } = this.props;
     return (
-      <div className={classes} onClick={onClickHandler}>
-        {children}
+      <div>
+        <div className={classes} onClick={onClickHandler}>
+          {children}
+        </div>
       </div>
     );
   }
