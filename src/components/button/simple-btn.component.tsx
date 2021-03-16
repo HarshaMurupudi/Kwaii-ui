@@ -20,7 +20,7 @@ class SimpleBtn extends React.Component<PropType> {
     const { children = null, classes = "", onClickHandler } = this.props;
     return (
       <div>
-        <div className={classes} onClick={onClickHandler}>
+        <div ref="targetElement" className={'ripple ' + classes} onClick={onClickHandler}>
           {children}
         </div>
       </div>
