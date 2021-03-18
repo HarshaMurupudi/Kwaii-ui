@@ -39,14 +39,7 @@ class SimpleBtn extends React.Component<PropType> {
 
   /* Debounce Code to call the Ripple removing function */
   callCleanUp = (cleanup: any, delay: any) => {
-    return function () { }
-
-    // return function () {
-    //   clearTimeout(this.bounce);
-    //   this.bounce = setTimeout(() => {
-    //     cleanup();
-    //   }, delay);
-    // }
+    // return function () { }
   }
 
   renderRippleSpan = () => {
@@ -71,7 +64,7 @@ class SimpleBtn extends React.Component<PropType> {
       <div>
         <div ref="targetElement" className={'ripple ' + classes} onClick={onClickHandler}>
           {children}
-          <div className="rippleContainer" onMouseDown={this.showRipple} onMouseUp={this.callCleanUp(this.cleanUp, 2000)}>
+          <div className="rippleContainer" onMouseDown={this.showRipple}>
             {this.renderRippleSpan()}
           </div>
         </div>
