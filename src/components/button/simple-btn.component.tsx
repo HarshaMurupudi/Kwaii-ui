@@ -37,24 +37,25 @@ class SimpleBtn extends React.Component<PropType> {
     });
   }
 
+  // TODO: Use debouce to ristric clicks
   /* Debounce Code to call the Ripple removing function */
   callCleanUp = (cleanup: any, delay: any) => {
     // return function () { }
   }
 
   renderRippleSpan = () => {
-    return <div></div>
-    // const { showRipple = false, spanStyles = {} } = this.state;
-    // const spanArray = Object.keys(spanStyles);
-    // if (spanArray && spanArray.length > 0) {
-    //   return (
-    //     spanArray.map((key, index) => {
-    //       return <span key={'spanCount_' + index} className="" style={{ ...spanStyles[key] }}></span>
-    //     })
-    //   )
-    // } else {
-    //   return null;
-    // }
+    // return <div></div>
+    const { spanStyles = {} } = this.state;
+    const spanArray = Object.keys(spanStyles);
+    if (spanArray && spanArray.length > 0) {
+      return (
+        spanArray.map((key, index) => {
+          // return <span key={'spanCount_' + index} className="" style={{ ...spanStyles[key] }}></span>
+        })
+      )
+    } else {
+      return null;
+    }
   }
 
 
