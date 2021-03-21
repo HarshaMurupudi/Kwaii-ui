@@ -8,14 +8,29 @@ interface PropType {
   onClickHandler: (event: any) => null,
 }
 
-class SimpleBtn extends React.Component<PropType> {
+interface SpanStyles {
+  [key: string]: any
+}
+
+
+interface StateType {
+  spanStyles: SpanStyles,
+  count: number
+}
+
+class SimpleBtn extends React.Component<PropType, StateType> {
+  constructor(props: PropType) {
+    super(props);
+
+    this.state = this.initializeState();
+  }
+
   initializeState = () => {
     return {
       spanStyles: {},
       count: 0
     }
   }
-  state = this.initializeState();
 
   cleanUp = () => {
     const initialState = this.initializeState();
@@ -47,10 +62,13 @@ class SimpleBtn extends React.Component<PropType> {
     // return <div></div>
     const { spanStyles = {} } = this.state;
     const spanArray = Object.keys(spanStyles);
+    // const testObj: { [key: string]: any } = {}
     if (spanArray && spanArray.length > 0) {
       return (
         spanArray.map((key, index) => {
-          // return <span key={'spanCount_' + index} className="" style={{ ...spanStyles[key] }}></span>
+
+          // console.log(testObj[key])
+          return <span key={'spanCount_' + index} className="" style={{ ...spanStyles[key] }}></span>
         })
       )
     } else {
