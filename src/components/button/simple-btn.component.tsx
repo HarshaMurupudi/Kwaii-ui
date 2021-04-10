@@ -38,6 +38,7 @@ class SimpleBtn extends React.Component<PropType, StateType> {
   }
 
   showRipple = (e: any) => {
+    console.log("Hit")
     const rippleContainer = e.currentTarget;
     const size = rippleContainer.offsetWidth;
     const pos = rippleContainer.getBoundingClientRect();
@@ -58,12 +59,22 @@ class SimpleBtn extends React.Component<PropType, StateType> {
     // return function () { }
   }
 
+  handleEvent = (event: any) => {
+    console.log(event)
+    // if (event.type === "mousedown") {
+    //   this.setState({ message: "Mouse Down" });
+    // } else {
+    //   this.setState({ message: "Mouse Up" });
+    // }
+  }
+
   renderRippleSpan = () => {
     // return <div></div>
     const { spanStyles = {} } = this.state;
     const spanArray = Object.keys(spanStyles);
     // const testObj: { [key: string]: any } = {}
     if (spanArray && spanArray.length > 0) {
+      console.log("click recieved by render ripple")
       return (
         spanArray.map((key, index) => {
 
@@ -72,6 +83,8 @@ class SimpleBtn extends React.Component<PropType, StateType> {
         })
       )
     } else {
+      console.log("empty")
+
       return null;
     }
   }
@@ -85,8 +98,12 @@ class SimpleBtn extends React.Component<PropType, StateType> {
           {children}
           <div className="rippleContainer" onMouseDown={this.showRipple}>
             {this.renderRippleSpan()}
+
           </div>
         </div>
+        {/* <button className="btn btn-secondary" onMouseDown={this.handleEvent} onMouseUp={this.handleEvent} >
+            Change Image
+          </button> */}
       </div>
     );
   }

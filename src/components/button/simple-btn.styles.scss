@@ -1,47 +1,41 @@
 .btn {
-  padding: 12px 50px;
-  border: none;
-  border-radius: 5px;
-  background-color: #1abc9c;
-  color: #fff;
-  font-size: 18px;
-  outline: none;
-  cursor: pointer;
+  margin: 50px auto;
+  border-radius: 25px;
+  background-color: #5300e8;
+  box-shadow: 0 2px 4px 0 #888888;
+  display: inline-block;
+  padding: 15px 50px;
+  color: #ffffff;
+}
 
-  /* We need this to position 
-                span inside button */
+.center {
+  text-align: center;
+}
+
+/* ripple */
+.ripple {
   position: relative;
   overflow: hidden;
-  box-shadow: 6px 7px 40px -4px rgba(0, 0, 0, 0.2);
 }
-
-// ripple
-
-.btn span {
+.ripple .rippleContainer {
   position: absolute;
-  border-radius: 50%;
-  /* To make it round */
-  background-color: rgba(0, 0, 0, 0.3);
-
-  width: 100px;
-  height: 100px;
-  margin-top: -50px;
-  /* for positioning */
-  margin-left: -50px;
-
-  animation: ripple 1s;
-  opacity: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.ripple .rippleContainer span {
+  transform: scale(0);
+  border-radius: 100%;
+  position: absolute;
+  opacity: 0.75;
+  background-color: #ffffff;
+  animation: ripple 850ms;
 }
 
-/* Add animation */
 @keyframes ripple {
-  from {
-    opacity: 1;
-    transform: scale(0);
-  }
-
   to {
     opacity: 0;
-    transform: scale(10);
+    transform: scale(2);
   }
 }
