@@ -25,6 +25,8 @@ import BrandingWatermarkIcon from '@material-ui/icons/BrandingWatermark';
 import CallToActionIcon from '@material-ui/icons/CallToAction';
 import TouchAppIcon from '@material-ui/icons/TouchApp';
 import WavesIcon from '@material-ui/icons/Waves';
+import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
+import LayersIcon from '@material-ui/icons/Layers';
 
 const drawerWidth = 240;
 
@@ -89,14 +91,15 @@ function Drawer({ handleDrawerClick, isDrawerOpen, history }: PropsType) {
       subMenu: [
         { name: "Toggle", path: '/toggle', Icon: ToggleOnIcon },
         { name: "Button", path: '/button', Icon: CallToActionIcon },
+        { name: "Card", path: '/card', Icon: CheckBoxOutlineBlankIcon },
       ]
     },
     effects: {
       name: "Effects",
       Icon: WbIridescentIcon,
       subMenu: [
-        { name: "Shadow", path: '/shadow', Icon: TouchAppIcon },
-        { name: "Ripple", path: '/ripple', Icon: WavesIcon },
+        { name: "Shadow", path: '/shadow', Icon: LayersIcon },
+        { name: "Ripple", path: '/ripple', Icon: TouchAppIcon },
         { name: "Defer Loading", path: '/ripple', Icon: WavesIcon },
         { name: "Lazy Loading", path: '/ripple', Icon: WavesIcon },
       ]
