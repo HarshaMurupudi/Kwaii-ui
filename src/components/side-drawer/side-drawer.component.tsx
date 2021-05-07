@@ -27,6 +27,11 @@ import TouchAppIcon from '@material-ui/icons/TouchApp';
 import WavesIcon from '@material-ui/icons/Waves';
 import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
 import LayersIcon from '@material-ui/icons/Layers';
+import NoteIcon from '@material-ui/icons/Note';
+import SubtitlesIcon from '@material-ui/icons/Subtitles';
+import TimerIcon from '@material-ui/icons/Timer';
+import CallMissedIcon from '@material-ui/icons/CallMissed';
+import WidgetsIcon from '@material-ui/icons/Widgets';
 
 const drawerWidth = 240;
 
@@ -91,7 +96,7 @@ function Drawer({ handleDrawerClick, isDrawerOpen, history }: PropsType) {
       subMenu: [
         { name: "Toggle", path: '/toggle', Icon: ToggleOnIcon },
         { name: "Button", path: '/button', Icon: CallToActionIcon },
-        { name: "Card", path: '/card', Icon: CheckBoxOutlineBlankIcon },
+        { name: "Card", path: '/card', Icon: SubtitlesIcon },
       ]
     },
     effects: {
@@ -100,8 +105,16 @@ function Drawer({ handleDrawerClick, isDrawerOpen, history }: PropsType) {
       subMenu: [
         { name: "Shadow", path: '/shadow', Icon: LayersIcon },
         { name: "Ripple", path: '/ripple', Icon: TouchAppIcon },
-        { name: "Defer Loading", path: '/ripple', Icon: WavesIcon },
-        { name: "Lazy Loading", path: '/ripple', Icon: WavesIcon },
+        { name: "Defer Loading", path: '/ripple', Icon: CallMissedIcon },
+        { name: "Lazy Loading", path: '/ripple', Icon: TimerIcon },
+      ]
+    },
+    material: {
+      name: 'Material',
+      Icon: WidgetsIcon,
+      subMenu: [
+        { name: 'Paper', path: '/material/paper', Icon: NoteIcon },
+        { name: 'Glass', path: '/material/glass', Icon: CheckBoxOutlineBlankIcon },
       ]
     }
   };
